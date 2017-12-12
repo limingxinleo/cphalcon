@@ -749,4 +749,32 @@ class ModelTest extends UnitTest
             }
         );
     }
+
+    /**
+     * Test query some data from other schema
+     *
+     * @author limx <715557344@qq.com>
+     * @since 2017-12-12
+     */
+    public function testQueryDataFromOtherSchema()
+    {
+        $this->specify(
+            'Test query some data from other schema',
+            function () {
+                /** @var Users $user */
+                $user = Users::findFirst([
+                    'conditions' => 'id = 5',
+                    'schema' => 'phalcon_test'
+                ]);
+                expect($user->name)->equals('Limx PhalconTest');
+
+                /** @var Users $user */
+                $user = Users::findFirst([
+                    'conditions' => 'id = 5',
+                    'schema' => 'phalcon_test2'
+                ]);
+                expect($user->name)->equals('Limx PhalconTest2');
+            }
+        );
+    }
 }
