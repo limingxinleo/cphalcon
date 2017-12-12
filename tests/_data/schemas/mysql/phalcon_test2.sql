@@ -535,7 +535,7 @@ INSERT INTO `users` (`id`, `name`) VALUES
   (2, 'Serghei Iakovlev'),
   (3, 'Nikolaos Dimopoulos'),
   (4, 'Eduar Carvajal'),
-  (5, 'Limx PhalconTest');
+  (5, 'Limx PhalconTest2');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
